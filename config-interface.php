@@ -1,8 +1,9 @@
 <?php
 /**
  * Plugin Name: WP Config Interface
- * Version: 1.1
+ * Version: 1.4
  * Author: Ehsaan
+ * Author: Black_Sky
  * Author URI: http://iehsan.ir/
  * Description: Edit your WordPress base configuration easily with style ;)
  * Domain Path: languages
@@ -15,8 +16,9 @@
  * Thanks to [WP-Parsi Group](http://wp-parsi.com)
  *
  * @author 				Ehsaan
+ * @author 				Black_Sky
  * @license 			GPL v2.0 or later
- * @version 			1.1
+ * @version 			1.4
  */
 
 /**
@@ -425,6 +427,16 @@ function wpcfg_get_options() {
 				'value' 		=>	wpcfg_option( 'DISALLOW_FILE_EDIT', false ),
 				'id' 			=>	'disallow_file_edits',
 				'default' 		=>	false
+			),
+			'disallow_file_updates' =>	array(
+				'name' 			=>	__( 'Disallow upload', 'wpcfg' ),
+				'desc' 			=>	__( "Perhaps you’ve set up a WordPress site for a client and you don’t want them mindlessly upgrading without determining the compatibility of their theme or plugins.", 'wpcfg' ),
+				'const' 		=>	'DISALLOW_FILE_MODS',
+				'type' 			=>	'boolean',
+				'input' 		=>	'check',
+				'value' 		=>	wpcfg_option( 'DISALLOW_FILE_MODS', false ),
+				'id' 			=>	'disallow_file_updates',
+				'default' 		=>	false
 			)
 		),
 		//===============================================================================================
@@ -673,6 +685,7 @@ function wpcfg_generate_config( $data ) {
  *
  * @link https://codex.wordpress.org/Editing_wp-config.php
  * @author Ehsaan <iehsan.ir@gmail.com>
+ * @author Black_Sky <info@developerMen.ir>
  *
  * @package WordPress
  */
